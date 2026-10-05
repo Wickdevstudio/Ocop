@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>...........</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <div>
+            <h1>OCOP Remote Runner</h1>
+            <p>Remote Program Control</p>
+        </div>
+
+        <div id="connection" class="offline">
+            OFFLINE
+        </div>
+    </div>
+
+    <div class="card">
+
+        <label>เลือกโปรแกรม</label>
+
+        <select id="fileSelect">
+            <option value="">กำลังโหลด...</option>
+        </select>
+
+        <label>Licence Key</label>
+
+        <input
+            type="password"
+            id="license"
+            placeholder="ใส่ Licence Key"
+        >
+
+        <button id="runBtn">
+            RUN PROGRAM
+        </button>
+
+        <div id="message"></div>
+
+    </div>
+
+    <div class="card">
+
+        <h2>Runner Status</h2>
+
+        <div class="status-row">
+            <span>Runner</span>
+            <span id="runnerStatus">Checking...</span>
+        </div>
+
+        <div class="status-row">
+            <span>Last Program</span>
+            <span id="lastFile">-</span>
+        </div>
+
+        <div class="status-row">
+            <span>Last Result</span>
+            <span id="lastResult">-</span>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
