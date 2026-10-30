@@ -1,79 +1,553 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="th" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocop_project_price 🛠️✨</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Kanit & Prompt -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkbg: '#0d1117',
+                        cardbg: '#161b22',
+                        cardhover: '#1c2129',
+                        neonmint: '#00f2fe',
+                        electricpurple: '#7000ff',
+                        neonblue: '#38ef7d',
+                        pastelgreen: '#00ffaa',
+                        neonpink: '#ff2a85',
+                        kawaiiyellow: '#ffe600'
+                    },
+                    fontFamily: {
+                        kanit: ['Kanit', 'sans-serif'],
+                        prompt: ['Prompt', 'sans-serif']
+                    },
+                    boxShadow: {
+                        'neon-mint': '0 0 15px rgba(0, 242, 254, 0.25)',
+                        'neon-pink': '0 0 15px rgba(255, 42, 133, 0.25)',
+                        'neon-purple': '0 0 20px rgba(112, 0, 255, 0.3)',
+                        'card-glow': '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Kanit', sans-serif;
+            background-color: #0d1117;
+            color: #e6edf3;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(0, 242, 254, 0.05) 0%, transparent 25%),
+                radial-gradient(circle at 85% 85%, rgba(112, 0, 255, 0.08) 0%, transparent 30%),
+                radial-gradient(circle at 50% 50%, rgba(255, 42, 133, 0.03) 0%, transparent 40%);
+            background-attachment: fixed;
+        }
 
-    <title>...........</title>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0d1117;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #21262d;
+            border-radius: 9999px;
+            border: 2px solid #0d1117;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00f2fe;
+        }
 
-    <link rel="stylesheet" href="style.css">
+        .gradient-text-mint {
+            background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+        .gradient-text-pink {
+            background: linear-gradient(135deg, #ff2a85 0%, #ff758c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glass-card {
+            background: rgba(22, 27, 34, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(0, 242, 254, 0.3);
+        }
+
+        .floating-anim {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-6px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
 </head>
+<body class="min-h-screen pb-12">
 
-<body>
+    <!-- Header Section -->
+    <header class="sticky top-0 z-50 glass-card border-b border-gray-800/80 mb-8 bg-darkbg/90 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                
+                <!-- Logo & Title -->
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-neonmint via-indigo-600 to-neonpink p-0.5 shadow-neon-mint floating-anim flex-shrink-0">
+                        <div class="w-full h-full bg-darkbg rounded-[14px] flex items-center justify-center">
+                            <i class="fa-solid fa-microchip text-2xl text-neonmint"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <h1 class="text-2xl font-bold tracking-wide gradient-text-mint">Ocop_project_price</h1>
+                            <span class="text-xs px-2.5 py-0.5 rounded-full bg-neonpink/20 text-neonpink font-semibold border border-neonpink/30 animate-pulse">
+                                <i class="fa-solid fa-heart text-[10px] mr-1"></i>V1.0
+                            </span>
+                        </div>
+                        <p class="text-xs text-gray-400">ระบบตรวจสอบอุปกรณ์และงบประมาณโปรเจกต์ DIY & IoT</p>
+                    </div>
+                </div>
 
-<div class="container">
+                <!-- Stats Overview Badges -->
+                <div class="flex flex-wrap items-center gap-3">
+                    <div class="flex-1 min-w-[120px] bg-cardbg/80 border border-gray-800 rounded-2xl p-2.5 px-4 flex items-center gap-3 shadow-inner">
+                        <div class="w-9 h-9 rounded-xl bg-neonmint/10 flex items-center justify-center text-neonmint">
+                            <i class="fa-solid fa-folder-open"></i>
+                        </div>
+                        <div>
+                            <div class="text-[11px] text-gray-400">โปรเจกต์ทั้งหมด</div>
+                            <div id="stat-projects-count" class="text-lg font-bold text-white">10</div>
+                        </div>
+                    </div>
 
-    <div class="header">
-        <div>
-            <h1>OCOP Remote Runner</h1>
-            <p>Remote Program Control</p>
+                    <div class="flex-1 min-w-[120px] bg-cardbg/80 border border-gray-800 rounded-2xl p-2.5 px-4 flex items-center gap-3 shadow-inner">
+                        <div class="w-9 h-9 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400">
+                            <i class="fa-solid fa-plug-wire"></i>
+                        </div>
+                        <div>
+                            <div class="text-[11px] text-gray-400">รวมอุปกรณ์</div>
+                            <div id="stat-items-count" class="text-lg font-bold text-purple-300">0</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
+    </header>
 
-        <div id="connection" class="offline">
-            OFFLINE
-        </div>
-    </div>
+    <!-- Main Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Controls & Filter Section -->
+        <section class="glass-card rounded-3xl p-5 mb-8 shadow-card-glow">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                
+                <!-- Search Input -->
+                <div class="relative w-full md:w-1/2">
+                    <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+                    <input 
+                        type="text" 
+                        id="search-input" 
+                        placeholder="ค้นหาชื่อโปรเจกต์ หรือ อุปกรณ์..." 
+                        class="w-full bg-darkbg/80 border border-gray-700/80 rounded-2xl pl-11 pr-10 py-3 text-sm text-gray-100 placeholder-gray-500 focus:outline-none focus:border-neonmint focus:ring-1 focus:ring-neonmint transition-all duration-300"
+                    >
+                    <button id="clear-search" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white p-1">
+                        <i class="fa-solid fa-xmark text-sm"></i>
+                    </button>
+                </div>
 
-    <div class="card">
+                <!-- Category Filter & Sort -->
+                <div class="flex items-center gap-3 w-full md:w-auto">
+                    <!-- Filter Select -->
+                    <div class="relative w-full md:w-64">
+                        <i class="fa-solid fa-filter absolute left-3.5 top-1/2 -translate-y-1/2 text-neonpink text-xs"></i>
+                        <select id="project-filter" class="w-full bg-darkbg/80 border border-gray-700/80 rounded-2xl pl-9 pr-8 py-3 text-sm text-gray-200 appearance-none focus:outline-none focus:border-neonpink transition-all cursor-pointer">
+                            <option value="all">📁 แสดงทุกโปรเจกต์ (10)</option>
+                        </select>
+                        <i class="fa-solid fa-chevron-down absolute right-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-xs pointer-events-none"></i>
+                    </div>
 
-        <label>เลือกโปรแกรม</label>
+                    <!-- Reset Button -->
+                    <button id="reset-btn" class="px-4 py-3 bg-gray-800 hover:bg-gray-700 text-gray-300 rounded-2xl text-sm font-medium transition-all duration-200 flex items-center gap-2 border border-gray-700 flex-shrink-0 active:scale-95">
+                        <i class="fa-solid fa-rotate-left text-xs"></i>
+                        <span>รีเซ็ต</span>
+                    </button>
+                </div>
 
-        <select id="fileSelect">
-            <option value="">กำลังโหลด...</option>
-        </select>
+            </div>
+        </section>
 
-        <label>Licence Key</label>
+        <!-- Dynamic Projects Grid -->
+        <section>
+            <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Project Cards will be dynamically injected here -->
+            </div>
 
-        <input
-            type="password"
-            id="license"
-            placeholder="ใส่ Licence Key"
-        >
+            <!-- Empty State -->
+            <div id="empty-state" class="hidden glass-card rounded-3xl p-12 text-center max-w-md mx-auto my-12">
+                <div class="w-20 h-20 mx-auto mb-4 rounded-full bg-neonpink/10 flex items-center justify-center text-neonpink text-3xl floating-anim">
+                    <i class="fa-solid fa-ghost"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2">ไม่พบข้อมูลที่คุณค้นหา</h3>
+                <p class="text-sm text-gray-400 mb-6">ลองค้นหาด้วยคำอื่น หรือเลือกตัวกรองโปรเจกต์เป็น "แสดงทุกโปรเจกต์"</p>
+                <button onclick="resetFilters()" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-neonmint to-blue-500 text-darkbg font-bold text-sm shadow-neon-mint hover:opacity-90 transition-all">
+                    ล้างการค้นหา 🪄
+                </button>
+            </div>
+        </section>
 
-        <button id="runBtn">
-            RUN PROGRAM
-        </button>
+    </main>
 
-        <div id="message"></div>
+    <!-- JavaScript Data & Logic -->
+    <script>
+        // Projects Data Array
+        const projectsData = [
+            {
+                id: 1,
+                title: "โปรเจก ระบบรดน้ำต้นไม้อัตโนมัติ",
+                totalPrice: 775,
+                icon: "fa-seedling",
+                iconColor: "text-emerald-400",
+                iconBg: "bg-emerald-500/10",
+                items: [
+                    { category: "บอร์ดควบคุมหลัก", name: "Arduino UNO R3 พร้อมสาย USB", price: 300 },
+                    { category: "เซ็นเซอร์", name: "เซนเซอร์วัดความชื้นในดิน (Soil Moisture Sensor)", price: 60 },
+                    { category: "อุปกรณ์ควบคุมและoutput", name: "โมดูลรีเลย์ 1 ช่อง (Relay Module)", price: 50 },
+                    { category: "อุปกรณ์ควบคุมและoutput", name: "ปั๊มน้ำขนาดเล็ก 6-12VDC (R385/R280)", price: 140 },
+                    { category: "อุปกรณ์แจ้งเตือนและแสดงผล", name: "จอแสดงผล LCD1602 พร้อมโมดูล I2C", price: 85 },
+                    { category: "อุปกรณ์ต่อวงจรและต่อวงจร", name: "บอร์ดทดลอง (Solderless Breadboard)", price: 40 },
+                    { category: "อุปกรณ์ต่อวงจรและต่อวงจร", name: "สายจัมเปอร์/สายแพสำหรับต่อวงจร (คละหัว ผู้-ผู้ / ผู้-เมีย)", price: 120 }
+                ]
+            },
+            {
+                id: 2,
+                title: "โปรเจก ระบบตรวจจับการล้ม",
+                totalPrice: 547,
+                icon: "fa-person-falling",
+                iconColor: "text-rose-400",
+                iconBg: "bg-rose-500/10",
+                items: [
+                    { category: "บอร์ดควบคุมหลัก", name: "ESP32 NodeMCU Board", price: 155 },
+                    { category: "เซ็นเซอร์", name: "เซนเซอร์วัดความเร่งและไจโรสโคป (MPU-6050)", price: 110 },
+                    { category: "อุปกรณ์ควบคุมและoutput", name: "บัซเซอร์ส่งเสียงเตือน (Active Buzzer)", price: 35 },
+                    { category: "โมดูลเสริมและระบบพลังงาน", name: "โมดูลชาร์จแบตเตอรี่ลิเธียม (TP4056)", price: 25 },
+                    { category: "อุปกรณ์ต่อวงจรและต่อวงจร", name: "บอร์ดทดลอง (Solderless Breadboard)", price: 40 },
+                    { category: "อุปกรณ์ต่อวงจรและต่อวงจร", name: "สายจัมเปอร์/สายแพสำหรับต่อวงจร (คละหัว ผู้-ผู้ / ผู้-เมีย)", price: 120 }
+                ]
+            },
+            {
+                id: 3,
+                title: "โปรเจก ไม้เท้าคนตาบอด",
+                totalPrice: 420,
+                icon: "fa-blind",
+                iconColor: "text-amber-400",
+                iconBg: "bg-amber-500/10",
+                items: [
+                    { category: "บอร์ดควบคุมหลัก", name: "Arduino Nano V3.0 พร้อมสาย USB", price: 180 },
+                    { category: "เซ็นเซอร์", name: "เซนเซอร์อัลตราโซนิกวัดระยะ (HC-SR04)", price: 35 },
+                    { category: "อุปกรณ์ควบคุมและoutput", name: "มอเตอร์สั่นขนาดเล็ก (Vibration Motor)", price: 35 },
+                    { category: "โมดูลเสริมและระบบพลังงาน", name: "รางถ่าน 9V แบบมีสายสวิตช์", price: 30 },
+                    { category: "อุปกรณ์ต่อวงจรและต่อวงจร", name: "บอร์ดทดลอง (Solderless Breadboard)", price: 40 },
+                    { category: "อุปกรณ์ต่อวงจรและต่อวงจร", name: "สายจัมเปอร์/สายแพสำหรับต่อวงจร (คละหัว ผู้-ผู้ / ผู้-เมีย)", price: 120 }
+                ]
+            },
+            {
+                id: 4,
+                title: "โปรเจก ชุดรดน้ำอัตโนมัติ",
+                totalPrice: 870,
+                icon: "fa-shower",
+                iconColor: "text-cyan-400",
+                iconBg: "bg-cyan-500/10",
+                items: [
+                    { category: "บอร์ดควบคุมหลัก", name: "Arduino Nano V3.0 พร้อมสาย USB", price: 180 },
+                    { category: "เซ็นเซอร์", name: "เซนเซอร์ความชื้นในดินแบบสัมผัส (Capacitive Soil Moisture V1.2)", price: 60 },
+                    { category: "อุปกรณ์ควบคุมและoutput", name: "ปั๊มน้ำไดอะแฟรมขนาดเล็ก 5V-12V ชนิดแช่ (Submersible Pump)", price: 420 },
+                    { category: "อุปกรณ์ควบคุมและoutput", name: "โมดูลรีเลย์ 1 ช่อง (Relay Module)", price: 50 },
+                    { category: "อุปกรณ์ต่อวงจรและต่อวงจร", name: "บอร์ดทดลอง (Solderless Breadboard)", price: 40 },
+                    { category: "อุปกรณ์ต่อวงจรและต่อวงจร", name: "สายจัมเปอร์/สายแพสำหรับต่อวงจร (คละหัว ผู้-ผู้ / ผู้-เมีย)", price: 120 }
+                ]
+            },
+            {
+                id: 5,
+                title: "โปรเจก ปุ่มเรียกผู้ดูแลไร้สาย",
+                totalPrice: 547,
+                icon: "fa-bell",
+                iconColor: "text-purple-400",
+                iconBg: "bg-purple-500/10",
+                items: [
+                    { category: "บอร์ดควบคุมหลัก", name: "ESP32 NodeMCU Board (2ชิ้น)", price: 310 },
+                    { category: "อุปกรณ์ควบคุมและoutput", name: "ชุดสวิตช์ปุ่มกด (Push Button)", price: 4 },
+                    { category: "อุปกรณ์แจ้งเตือนและแสดงผล", name: "บัซเซอร์ส่งเสียงเตือน (Active Buzzer)", price: 35 },
+                    { category: "อุปกรณ์แจ้งเตือนและแสดงผล", name: "หลอดไฟ LED คละสี", price: 18 },
+                    { category: "โมดูลเสริมและระบบพลังงาน", name: "รางถ่าน AA แบบมีฝาปิด", price: 20 },
+                    { category: "อุปกรณ์ต่อวงจรและต่อวงจร", name: "บอร์ดทดลอง (Solderless Breadboard)", price: 40 },
+                    { category: "อุปกรณ์ต่อวงจรและต่อวงจร", name: "สายจัมเปอร์/สายแพสำหรับต่อวงจร (คละหัว ผู้-ผู้ / ผู้-เมีย)", price: 120 }
+                ]
+            },
+            {
+                id: 6,
+                title: "โปรเจก เครื่องวัดอัตราการเต้นของหัวใจ",
+                totalPrice: 645,
+                icon: "fa-heart-pulse",
+                iconColor: "text-pink-400",
+                iconBg: "bg-pink-500/10",
+                items: [
+                    { category: "บอร์ดควบคุมหลัก", name: "Arduino UNO R3 พร้อมสาย USB", price: 300 },
+                    { category: "เซ็นเซอร์", name: "เซนเซอร์วัดชีพจรและออกซิเจนในเลือด (MAX30102)", price: 60 },
+                    { category: "อุปกรณ์แจ้งเตือนและแสดงผล", name: "หน้าจอ OLED Display ขนาด 0.96 นิ้ว (I2C)", price: 90 },
+                    { category: "อุปกรณ์แจ้งเตือนและแสดงผล", name: "บัซเซอร์ส่งเสียงเตือน (Active Buzzer)", price: 35 },
+                    { category: "อุปกรณ์ต่อวงจรและต่อวงจร", name: "บอร์ดทดลอง (Solderless Breadboard)", price: 40 },
+                    { category: "อุปกรณ์ต่อวงจรและต่อวงจร", name: "สายจัมเปอร์/สายแพสำหรับต่อวงจร (คละหัว ผู้-ผู้ / ผู้-เมีย)", price: 120 }
+                ]
+            },
+            {
+                id: 7,
+                title: "โปรเจก ระบบเตือนภัยน้ำท่วม",
+                totalPrice: 465,
+                icon: "fa-house-tsunami",
+                iconColor: "text-blue-400",
+                iconBg: "bg-blue-500/10",
+                items: [
+                    { category: "บอร์ดควบคุมหลัก", name: "NodeMCU ESP8266 V3", price: 90 },
+                    { category: "เซ็นเซอร์", name: "เซนเซอร์วัดระดับน้ำ (Water Level Sensor)", price: 25 },
+                    { category: "อุปกรณ์ควบคุมและoutput", name: "โมดูลรีเลย์ 1 ช่อง (Relay Module)", price: 50 },
+                    { category: "อุปกรณ์แจ้งเตือนและแสดงผล", name: "ไซเรนเตือนภัยขนาดเล็ก (Mini Siren 12V)", price: 140 },
+                    { category: "อุปกรณ์ต่อวงจรและต่อวงจร", name: "บอร์ดทดลอง (Solderless Breadboard)", price: 40 },
+                    { category: "อุปกรณ์ต่อวงจรและต่อวงจร", name: "สายจัมเปอร์/สายแพสำหรับต่อวงจร (คละหัว ผู้-ผู้ / ผู้-เมีย)", price: 120 }
+                ]
+            },
+            {
+                id: 8,
+                title: "โปรเจก เครื่องวัดความชื้นในอากาศ",
+                totalPrice: 615,
+                icon: "fa-droplet",
+                iconColor: "text-sky-400",
+                iconBg: "bg-sky-500/10",
+                items: [
+                    { category: "บอร์ดควบคุมหลัก", name: "Arduino UNO R3 พร้อมสาย USB", price: 300 },
+                    { category: "เซ็นเซอร์", name: "เซนเซอร์วัดอุณหภูมิและความชื้นความแม่นยำสูง (DHT22)", price: 70 },
+                    { category: "อุปกรณ์แจ้งเตือนและแสดงผล", name: "จอแสดงผล LCD1602 พร้อมโมดูล I2C", price: 85 },
+                    { category: "อุปกรณ์ต่อวงจรและต่อวงจร", name: "บอร์ดทดลอง (Solderless Breadboard)", price: 40 },
+                    { category: "อุปกรณ์ต่อวงจรและต่อวงจร", name: "สายจัมเปอร์/สายแพสำหรับต่อวงจร (คละหัว ผู้-ผู้ / ผู้-เมีย)", price: 120 }
+                ]
+            },
+            {
+                id: 9,
+                title: "โปรเจก เครื่องวัดน้ำฝน",
+                totalPrice: 675,
+                icon: "fa-cloud-showers-heavy",
+                iconColor: "text-indigo-400",
+                iconBg: "bg-indigo-500/10",
+                items: [
+                    { category: "บอร์ดควบคุมหลัก", name: "Arduino UNO R3 พร้อมสาย USB", price: 300 },
+                    { category: "เซ็นเซอร์", name: "เซนเซอร์ตรวจจับเม็ดฝน (Raindrops Detection Module)", price: 70 },
+                    { category: "โมดูลเสริมและระบบพลังงาน", name: "โมดูลเวลาจริง (DS3231 RTC Module)", price: 105 },
+                    { category: "โมดูลเสริมและระบบพลังงาน", name: "โมดูลอ่านการ์ด Micro SD Card (Data Logger)", price: 40 },
+                    { category: "อุปกรณ์ต่อวงจรและต่อวงจร", name: "บอร์ดทดลอง (Solderless Breadboard)", price: 40 },
+                    { category: "อุปกรณ์ต่อวงจรและต่อวงจร", name: "สายจัมเปอร์/สายแพสำหรับต่อวงจร (คละหัว ผู้-ผู้ / ผู้-เมีย)", price: 120 }
+                ]
+            },
+            {
+                id: 10,
+                title: "โปรเจก ระบบแจ้งเตือนอากาศร้อน",
+                totalPrice: 570,
+                icon: "fa-temperature-high",
+                iconColor: "text-orange-400",
+                iconBg: "bg-orange-500/10",
+                items: [
+                    { category: "บอร์ดควบคุมหลัก", name: "Arduino UNO R3 พร้อมสาย USB", price: 300 },
+                    { category: "เซ็นเซอร์", name: "เซนเซอร์วัดอุณหภูมิและความชื้นรุ่นเริ่มต้น (DHT11)", price: 35 },
+                    { category: "อุปกรณ์ควบคุมและoutput", name: "พัดลมระบายความร้อน DC ขนาดเล็ก", price: 40 },
+                    { category: "อุปกรณ์แจ้งเตือนและแสดงผล", name: "บัซเซอร์ส่งเสียงเตือน (Active Buzzer)", price: 35 },
+                    { category: "อุปกรณ์ต่อวงจรและต่อวงจร", name: "บอร์ดทดลอง (Solderless Breadboard)", price: 40 },
+                    { category: "อุปกรณ์ต่อวงจรและต่อวงจร", name: "สายจัมเปอร์/สายแพสำหรับต่อวงจร (คละหัว ผู้-ผู้ / ผู้-เมีย)", price: 120 }
+                ]
+            }
+        ];
 
-    </div>
+        // Helper function for category badge styling
+        function getCategoryBadge(cat) {
+            let color = "bg-gray-800 text-gray-300 border-gray-700";
+            if (cat.includes("บอร์ดควบคุม")) color = "bg-cyan-950/60 text-cyan-300 border-cyan-800/50";
+            else if (cat.includes("เซ็นเซอร์")) color = "bg-emerald-950/60 text-emerald-300 border-emerald-800/50";
+            else if (cat.includes("ควบคุมและoutput")) color = "bg-purple-950/60 text-purple-300 border-purple-800/50";
+            else if (cat.includes("แจ้งเตือนและแสดงผล")) color = "bg-pink-950/60 text-pink-300 border-pink-800/50";
+            else if (cat.includes("ต่อวงจร")) color = "bg-amber-950/60 text-amber-300 border-amber-800/50";
+            else if (cat.includes("โมดูลเสริม")) color = "bg-indigo-950/60 text-indigo-300 border-indigo-800/50";
 
-    <div class="card">
+            return `<span class="inline-block text-[10px] px-2 py-0.5 rounded-md border ${color} font-normal mb-1">${cat}</span>`;
+        }
 
-        <h2>Runner Status</h2>
+        // Initialize Filter Options
+        function initFilterOptions() {
+            const filterSelect = document.getElementById('project-filter');
+            projectsData.forEach(p => {
+                const opt = document.createElement('option');
+                opt.value = p.id;
+                opt.textContent = `📌 ${p.title}`;
+                filterSelect.appendChild(opt);
+            });
+        }
 
-        <div class="status-row">
-            <span>Runner</span>
-            <span id="runnerStatus">Checking...</span>
-        </div>
+        // Render Cards
+        function renderDashboard(projects) {
+            const grid = document.getElementById('projects-grid');
+            const emptyState = document.getElementById('empty-state');
+            grid.innerHTML = '';
 
-        <div class="status-row">
-            <span>Last Program</span>
-            <span id="lastFile">-</span>
-        </div>
+            if (projects.length === 0) {
+                grid.classList.add('hidden');
+                emptyState.classList.remove('hidden');
+                updateStats(0, 0, 0);
+                return;
+            }
 
-        <div class="status-row">
-            <span>Last Result</span>
-            <span id="lastResult">-</span>
-        </div>
+            grid.classList.remove('hidden');
+            emptyState.classList.add('hidden');
 
-    </div>
+            let totalItemsCount = 0;
+            let totalGrandCost = 0;
 
-</div>
+            projects.forEach(project => {
+                totalGrandCost += project.totalPrice;
+                totalItemsCount += project.items.length;
 
-<script src="app.js"></script>
+                // Create Project Card
+                const card = document.createElement('div');
+                card.className = "glass-card rounded-3xl p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 shadow-card-glow group";
 
+                let itemsHTML = project.items.map((item, idx) => `
+                    <div class="py-2.5 ${idx !== project.items.length - 1 ? 'border-b border-gray-800/60' : ''} flex items-start justify-between gap-3 text-xs">
+                        <div class="pr-2">
+                            ${getCategoryBadge(item.category)}
+                            <div class="text-gray-200 font-medium leading-relaxed group-hover:text-white transition-colors">
+                                ${item.name}
+                            </div>
+                        </div>
+                        <div class="font-semibold text-neonmint bg-neonmint/10 px-2 py-1 rounded-lg flex-shrink-0 border border-neonmint/20">
+                            ${item.price.toLocaleString()} ฿
+                        </div>
+                    </div>
+                `).join('');
+
+                card.innerHTML = `
+                    <div>
+                        <!-- Card Header -->
+                        <div class="flex items-start justify-between gap-3 pb-4 mb-3 border-b border-gray-800/80">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-2xl ${project.iconBg} flex items-center justify-center ${project.iconColor} text-lg flex-shrink-0 border border-white/5">
+                                    <i class="fa-solid ${project.icon}"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-base text-white group-hover:text-neonmint transition-colors line-clamp-1">
+                                        ${project.title}
+                                    </h3>
+                                    <span class="text-[11px] text-gray-400">
+                                        <i class="fa-solid fa-list-check mr-1 text-[10px]"></i> อุปกรณ์ ${project.items.length} รายการ
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Items List -->
+                        <div class="space-y-0.5 my-2">
+                            ${itemsHTML}
+                        </div>
+                    </div>
+
+                    <!-- Card Footer / Total Price Highlight -->
+                    <div class="mt-5 pt-3 border-t border-gray-800/80 flex items-center justify-between bg-darkbg/40 -mx-5 -mb-5 p-4 px-5 rounded-b-3xl">
+                        <div class="text-xs text-gray-400 font-medium flex items-center gap-1.5">
+                            <i class="fa-solid fa-calculator text-neonpink"></i>
+                            <span>ราคารวมสุทธิ</span>
+                        </div>
+                        <div class="text-xl font-bold gradient-text-mint">
+                            ${project.totalPrice.toLocaleString()} <span class="text-xs text-neonmint font-normal">บาท</span>
+                        </div>
+                    </div>
+                `;
+
+                grid.appendChild(card);
+            });
+
+            updateStats(projects.length, totalItemsCount, totalGrandCost);
+        }
+
+        // Update Stats Header
+        function updateStats(projCount, itemsCount, totalCost) {
+            document.getElementById('stat-projects-count').textContent = projCount;
+            document.getElementById('stat-items-count').textContent = itemsCount;
+        }
+
+        // Filter & Search Logic
+        function filterProjects() {
+            const searchTerm = document.getElementById('search-input').value.trim().toLowerCase();
+            const selectedFilter = document.getElementById('project-filter').value;
+            const clearBtn = document.getElementById('clear-search');
+
+            if (searchTerm !== '') {
+                clearBtn.classList.remove('hidden');
+            } else {
+                clearBtn.classList.add('hidden');
+            }
+
+            const filtered = projectsData.filter(project => {
+                // Match Select Filter
+                const matchesSelect = (selectedFilter === 'all') || (project.id.toString() === selectedFilter);
+
+                // Match Search Input (Project title or Item names)
+                const matchesSearch = searchTerm === '' || 
+                    project.title.toLowerCase().includes(searchTerm) ||
+                    project.items.some(item => item.name.toLowerCase().includes(searchTerm) || item.category.toLowerCase().includes(searchTerm));
+
+                return matchesSelect && matchesSearch;
+            });
+
+            renderDashboard(filtered);
+        }
+
+        // Reset All Filters
+        function resetFilters() {
+            document.getElementById('search-input').value = '';
+            document.getElementById('project-filter').value = 'all';
+            filterProjects();
+        }
+
+        // Event Listeners
+        document.addEventListener('DOMContentLoaded', () => {
+            initFilterOptions();
+            renderDashboard(projectsData);
+
+            document.getElementById('search-input').addEventListener('input', filterProjects);
+            document.getElementById('project-filter').addEventListener('change', filterProjects);
+            document.getElementById('reset-btn').addEventListener('click', resetFilters);
+            document.getElementById('clear-search').addEventListener('click', () => {
+                document.getElementById('search-input').value = '';
+                filterProjects();
+            });
+        });
+    </script>
 </body>
 </html>
